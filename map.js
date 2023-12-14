@@ -9,12 +9,10 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 foodMap.setView([40.84155274654479, -73.939943789621], 15);
 
-L.geoJSON(nycDomRes).addTo(foodMap)
-
 // replace Leaflet's default blue marker with a custom icon
 function createCustomIcon (_feature, latlng) {
     let domIcon = L.icon ({
-        iconUrl: "flag icon.png", 
+        iconUrl: "flag icon.png",
         iconSize: [25,25],
         shadowSize: [35, 20], // width, height of optional shadow image
         iconAnchor: [10, 12], // point of the icon which will correspond to marker's location
@@ -26,19 +24,14 @@ function createCustomIcon (_feature, latlng) {
     
 // create an options object that specifies which function will called on each feature
     let myLayerOptions = {
-        pointToLayer: createCustomIcon
-      }
+        pointToLayer: createCustomIcon,
+        onEachFeature: function(feature, layer) {
+            layer.bindPopup("<h3>" + feature.properties.Restaurant + "</h3> <hr> <h3>" + "Google Rating: " + feature.properties.Rating + "<p>" + "Price Range: "+ feature.properties.Price + "<p>" + "<a href=" + feature.properties.Maps + ">" + "Link to Google Maps"+ "</a>"); 
+        }
+    }
       
 // create the GeoJSON layer
       L.geoJSON(nycDomRes, myLayerOptions).addTo(foodMap)
-
-// show properties for each restaurant
-L.geoJSON(nycDomRes, {
-    onEachFeature: function(feature, layer) {
-        layer.bindPopup("<h3>" + feature.properties.Restaurant + "</h3> <hr> <h3>" + "Google Rating: " + feature.properties.Rating + "<p>" + "<a href=" + feature.properties.Maps + ">" + "Link to Google Maps"+ "</a>"); 
-    }
-}).addTo(foodMap);
-
 
 /// making neighborhood buttons clickable
 
@@ -160,7 +153,7 @@ $("#pan-to-Washington-Heights").click(function() {
     });
     console.log(WaHcoordinates.geometry); 
 
-        // making Inwood clickable
+ // making Inwood clickable
 $("#pan-to-Inwood").click(function() {
     let IN = nycDomRes.features.find(function(feature) {
         return feature.properties.Neighborhood === "Inwood";
@@ -174,20 +167,18 @@ $("#pan-to-Inwood").click(function() {
     });
     console.log(INcoordinates.geometry); 
     
-    // add some fill color to the map and make only $ red
-L.geoJSON (nycDomRes, {
-    style: function (feature) {
-        if (feature.properties.Price === "$") {
-            return {
-                color: "red"
-            };
-        } else {
-                return {
-                    color: "blue",
-                }
-        }
-    }
-}).addTo(nycDomRes);
+
+
+
+
+        
+    
+
+    
+
+
+    
+
 
 
 

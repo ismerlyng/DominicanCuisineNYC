@@ -3,6 +3,7 @@
   width: 100%;
   display: flex;
   justify-content: space-around;
+  color: rgb(1, 12, 12);
 }
 
 #intro  {
@@ -12,7 +13,7 @@
 
 #map {
   width: 55vw;
-  height: 100vh;
+  height: 90vh;
   display: block;
   object-fit: cover;
   object-position: right;
@@ -74,12 +75,12 @@
 }
 
 
-.custom-popup .leaflet-popup-content-wrapper {
-  background:#2c3e50;
-  color:#fff;
+.leaflet-popup-content-wrapper {
+  background:#97b5d3;
+  color:#180404;
   font-size:10px;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: monospace;
   font-style: normal;
   line-height:15px;
-  border-radius: 0px;
+  border-radius: 10px;
   }
