@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Dominican Cuisine in Manhttan </title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+    integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+    integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+    crossorigin=""></script>
+    <link rel="stylesheet" href="webpage styling.css">
+    <script src="coordinates.js"></script>
+  </head>
+
+  <body>
+    <style>
+      body {
+        background-image: url('dominican flag.jpg');
+      }
+      </style>
+  <main> 
+      <div class="container" style = "font-family: monospace;">
+          <div class="left">
+              <h1>Dominican Cuisine in Manhattan </h1>
+              <h4>Designed by Ismerlyn Gonzalez</h4>
+              <p> As a Dominican-American, food has helped me form a strong connection with my culture. There are over 65 Dominican restaurants in Manhattan. Across these different spots, you'll find anything from mofongo (a dish of garlicky, mashed, and fried green plantains with meat or seafood) to the chimichurri hamburger (a delicious patty on traditional Dominican water-based bread with cabbage and mayo-ketchup). Whether or not you are of Dominican ancestry, everyone deserves to enjoy and explore the array of wonderful flavors this cuisine has to offer. </p>
+        
+
+              <h3>Look at restaurants by neighborhood</h3>
+        
+              <button id="pan-to-LES">Lower East Side</button>
+              <button id="pan-to-Hells-Kitchen">Hell's Kitchen</button>
+              <button id="pan-to-East-Harlem">East Harlem</button>
+              <button id="pan-to-Central-Harlem">Central Harlem</button>
+              <button id="pan-to-West-Harlem">West Harlem</button>
+              <button id="pan-to-Manhattan-Valley">Upper West Side</button>
+              <button id="pan-to-Hamilton-Heights">Hamilton Heights</button>
+              <button id="pan-to-Washington-Heights">Washington Heights</button>
+              <button id="pan-to-Inwood">Inwood</button>
+               
+              <h3>Look at restaurants by price range</h3>
+              <p> <a href="https://www.flaticon.com/free-icons/dominican-republic" title="dominican republic icons">Dominican republic icons created by Freepik - Flaticon</a> </p>
+          </div>
+          <div class="right"> 
+              <div id="map"></div>
+              <div class='custom-popup' id="map"></div>
+              <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+              <script src="map.js"></script>
+          </div>
+      </div>
+  </body>
+</html>
